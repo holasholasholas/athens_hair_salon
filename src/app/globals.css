@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --gold: #D4AF37;
+  --gold-highlight: #F3E5AB;
+  --gold-dark: #B8941F;
+  --ink: #2C2C2C;
+  --marble: #FDFDFD;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--marble);
+  color: var(--ink);
+  font-family: 'Inter', 'Montserrat', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+/* Gold button base */
+.btn-gold {
+  display: inline-block;
+  padding: 14px 40px;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  text-decoration: none;
+}
+
+.btn-gold:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+.btn-gold-filled {
+  background: var(--gold);
+  color: #fff;
+  border: 1px solid var(--gold);
+  display: inline-block;
+  padding: 14px 40px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  text-decoration: none;
+}
+
+.btn-gold-filled:hover {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+}
+
+/* Gold divider */
+.gold-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1rem auto;
+}
+
+/* Section padding */
+.section-pad {
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding: 70px 0;
+  }
+}
