@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import type { CSSProperties, ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
 
 const services = [
@@ -15,7 +16,7 @@ const services = [
   "Signature Athens Ritual",
 ];
 
-const inputStyle: React.CSSProperties = {
+const inputStyle: CSSProperties = {
   width: "100%",
   padding: "14px 16px",
   border: "1px solid rgba(212,175,55,0.35)",
@@ -41,12 +42,12 @@ export default function BookingSection() {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
   };

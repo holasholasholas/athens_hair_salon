@@ -62,7 +62,10 @@ export default function BeforeAfterSlider({
         className="absolute inset-y-0 left-0 overflow-hidden"
         style={{ width: `${position}%` }}
       >
-        <div className="absolute inset-0" style={{ width: containerRef.current?.offsetWidth ?? 400 }}>
+        <div
+          className="absolute inset-0"
+          style={{ width: containerRef.current ? `${containerRef.current.offsetWidth}px` : "600px" }}
+        >
           <Image src={beforeSrc} alt={beforeAlt} fill className="object-cover" />
         </div>
       </div>
