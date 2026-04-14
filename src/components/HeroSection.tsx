@@ -13,6 +13,7 @@ const container: Variants = {
 };
 
 const EASE_CIRC_OUT = [0, 0.55, 0.45, 1] as const;
+const MY_EASE = "easeInOut" as const;
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40, scale: 0.98 },
@@ -194,7 +195,7 @@ export default function HeroSection() {
           </span>
           <motion.div
             animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
+            transition={{ repeat: Infinity, duration: 1.6, ease: MY_EASE }}
             className="w-px h-8 bg-[#D4AF37]/60"
           />
         </motion.div>
