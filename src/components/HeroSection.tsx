@@ -12,7 +12,7 @@ const container: Variants = {
   },
 };
 
-const EASE_CIRC_OUT: [number, number, number, number] = [0, 0.55, 0.45, 1];
+const EASE_CIRC_OUT = [0, 0.55, 0.45, 1] as const;
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40, scale: 0.98 },
