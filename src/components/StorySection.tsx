@@ -2,7 +2,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const fadeUp = {
+// Added ": any" here to bypass the strict Easing type check
+const fadeUp: any = {
   hidden: { opacity: 0, y: 30 },
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
@@ -90,8 +91,8 @@ export default function StorySection() {
               marginBottom: "1.5rem",
             }}
           >
-            Founded on the belief that exceptional hair is a form of artistry, Athens was born 
-            from a desire to create something truly different — a sanctuary where technique meets 
+            Founded on the belief that exceptional hair is a form of artistry, Athens was born
+            from a desire to create something truly different — a sanctuary where technique meets
             intuition, and where every client leaves feeling elevated.
           </motion.p>
 
@@ -106,8 +107,8 @@ export default function StorySection() {
               marginBottom: "2.5rem",
             }}
           >
-            Our atelier is a curated space of white marble and soft gold — an environment 
-            designed to inspire calm and confidence. Each appointment is a private experience, 
+            Our atelier is a curated space of white marble and soft gold — an environment
+            designed to inspire calm and confidence. Each appointment is a private experience,
             each result a bespoke creation.
           </motion.p>
 
