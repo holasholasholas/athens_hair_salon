@@ -20,7 +20,7 @@ const fadeUp: Variants = {
     scale: 1,
     transition: {
       duration: 1.1,
-      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+      ease: "circOut",
     },
   },
 };
