@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants, TargetAndTransition } from "framer-motion";
 
 const services = [
   {
@@ -37,11 +37,10 @@ const services = [
   },
 ];
 
-// Using 'any' here acts as a sledgehammer to bypass Next.js's strict 
-// TargetResolver type checking for dynamic variants, unblocking your build.
-const cardVariants: any = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
-  show: (i: number) => ({
+  // Explicitly typing the return value here satisfies the TargetResolver signature
+  show: (i: number): TargetAndTransition => ({
     opacity: 1,
     y: 0,
     transition: { duration: 0.7, ease: "easeOut", delay: i * 0.15 },
