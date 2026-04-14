@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const services = [
   {
@@ -37,12 +37,13 @@ const services = [
   },
 ];
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: "easeOut", delay: i * 0.15 },
+    // ADDED "as const" HERE TO FIX THE TYPESCRIPT ERROR
+    transition: { duration: 0.7, ease: "easeOut" as const, delay: i * 0.15 },
   }),
 };
 
@@ -116,7 +117,7 @@ export default function ServicesSection() {
               lineHeight: 1.8,
             }}
           >
-            Every service is performed with meticulous care, using only the finest 
+            Every service is performed with meticulous care, using only the finest
             professional-grade products sourced from around the world.
           </p>
         </motion.div>
