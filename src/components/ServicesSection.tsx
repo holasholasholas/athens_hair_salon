@@ -1,5 +1,5 @@
 "use client";
-import { motion, Variants, TargetAndTransition } from "framer-motion";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -36,16 +36,6 @@ const services = [
     ],
   },
 ];
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  // Explicitly typing the return value here satisfies the TargetResolver signature
-  show: (i: number): TargetAndTransition => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease: "easeOut", delay: i * 0.15 },
-  }),
-};
 
 export default function ServicesSection() {
   return (
@@ -127,11 +117,11 @@ export default function ServicesSection() {
           {services.map((service, i) => (
             <motion.div
               key={service.category}
-              custom={i}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="show"
+              /* INLINED ANIMATION: No Variants or custom type checking needed */
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: i * 0.15 }}
               className="bg-white p-10"
               style={{
                 border: "1px solid rgba(212,175,55,0.25)",
