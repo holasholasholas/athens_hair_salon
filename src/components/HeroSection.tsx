@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -12,7 +12,7 @@ const container = {
   },
 };
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40, scale: 0.98 },
   show: {
     opacity: 1,
